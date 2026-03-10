@@ -1,0 +1,27 @@
+<h2>Review Disbursements</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Program</th>
+      <th>Date</th>
+      <th>Amount</th>
+      <th>Receiver</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    @for (i of items(); track $index) {
+      <tr>
+        <td>{{ i.programName }}</td>
+        <td>{{ i.disbursementDate }}</td>
+        <td>{{ i.amount }}</td>
+        <td>{{ i.receiverName }}</td>
+      </tr>
+    }
+  </tbody>
+</table>
+
+<div class="cta-container">
+  <button class="btn-primary">Submit</button>
+</div>

@@ -1,1 +1,138 @@
-/* You can add global styles to this file, and also import other style files */
+.layout {
+    display: flex;
+    background: #f5f5f5;
+    min-height: 100vh;
+    font-family: "Inter", sans-serif;
+
+    // ------------------------------
+    // Sidebar
+    // ------------------------------
+    .sidebar {
+        width: 260px;
+        background: #ffffff;
+        padding: 2rem 1.5rem;
+        border-right: 1px solid #e0e0e0;
+
+        .step {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 10px;
+            border-radius: 8px;
+            margin-bottom: 14px;
+            cursor: pointer;
+            color: #6c6c6c;
+            transition: 0.25s ease;
+
+            &:hover {
+                background: #f3f3f3;
+            }
+
+            .circle {
+                width: 26px;
+                height: 26px;
+                border-radius: 50%;
+                border: 2px solid #d6d6d6;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 14px;
+            }
+
+            &.active {
+                background: #fff7e0; // soft gold background
+                color: #000;
+
+                .circle {
+                    background: #92722A;
+                    color: #fff;
+                    border-color: #92722A;
+                }
+            }
+        }
+    }
+
+    // ------------------------------
+    // Main Content
+    // ------------------------------
+    .main {
+        flex: 1;
+        padding: 2rem 3rem;
+        background: #fafafa;
+
+        h1,
+        h2,
+        h3 {
+            font-weight: 600;
+            color: #2e2e2e;
+            margin-bottom: 1rem;
+        }
+    }
+}
+
+// ------------------------------
+// FORM FIELD STYLES (MATCH SCREENSHOT)
+// ------------------------------
+input,
+select,
+textarea {
+    border: 1px solid #e0c98d !important;
+    border-radius: 6px !important;
+    padding: 8px 10px !important;
+    height: 40px;
+    outline: none;
+
+    &:focus {
+        border-color: #92722A !important;
+        box-shadow: 0 0 0 2px rgba(146, 114, 42, 0.15);
+    }
+}
+
+// ------------------------------
+// BUTTONS
+// ------------------------------
+button {
+    border-radius: 6px;
+    padding: 10px 22px;
+    font-size: 14px;
+    border: 1px solid transparent;
+    border-radius: 8px !important;
+    cursor: pointer;
+    transition: 0.2s ease;
+
+    &.btn-cancel {
+        background: #ffffff;
+        border: 1px solid #92722A;
+        color: #92722A;
+
+        &:hover {
+            background: #fff7e0;
+        }
+    }
+
+    &.btn-secondary {
+        background: #fff7e0;
+        border: 1px solid #92722A;
+        color: #92722A;
+
+        &:hover {
+            background: #f3e4bc;
+        }
+    }
+
+    &.btn-primary {
+        background: #92722A;
+        color: #fff;
+
+        &:hover {
+            background: darken(#92722A, 6%);
+        }
+    }
+}
+
+.cta-container {
+    display: flex;
+    gap: 12px;
+    margin-top: 18px;
+    justify-content: flex-end
+}

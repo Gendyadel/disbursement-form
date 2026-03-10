@@ -1,0 +1,27 @@
+<div class="layout">
+  <!-- Sidebar Steps -->
+  <aside class="sidebar">
+    <div (click)="toggleTab(tabsEnum.Form)" class="step" [class.active]="tab() === tabsEnum.Form">
+      <span class="circle">1</span>
+      <span>Disbursement Form</span>
+    </div>
+
+    <div
+      (click)="toggleTab(tabsEnum.Review)"
+      class="step"
+      [class.active]="tab() === tabsEnum.Review"
+    >
+      <span class="circle">2</span>
+      <span>Review and Submit</span>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="main">
+    @if (tab() === tabsEnum.Form) {
+      <app-disbursement-form (goToReview)="toggleTab(tabsEnum.Review)"></app-disbursement-form>
+    } @else {
+      <app-disbursement-review></app-disbursement-review>
+    }
+  </main>
+</div>

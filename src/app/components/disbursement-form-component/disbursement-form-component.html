@@ -1,0 +1,108 @@
+<!-- disbursement-form-body.component.html -->
+<section class="header-block">
+  <h2>Disbursement Form</h2>
+  <div class="period">Reporting Period : 01/01/2025 to 31/12/2025</div>
+</section>
+
+<div class="section-divider"></div>
+
+<form class="radio-row" [formGroup]="form">
+  <label><input type="radio" [value]="true" formControlName="forSelf" /> For Self</label>
+  <label
+    ><input type="radio" [value]="false" formControlName="forSelf" /> For Other Licensed/Permitted
+    Entities</label
+  >
+</form>
+
+<form class="form-grid" [formGroup]="form">
+  <div class="field">
+    <label>Charitable program name</label>
+    <select formControlName="programName">
+      <option value="">Select an option</option>
+      <option>Program A</option>
+      <option>Program B</option>
+    </select>
+  </div>
+
+  <div class="field">
+    <label>Disbursement Date</label>
+    <input type="date" formControlName="disbursementDate" />
+  </div>
+
+  <div class="field">
+    <label>Disbursement Geographic Scope</label>
+    <select formControlName="geographicScope">
+      <option value="">Select an option</option>
+      <option>Local within other Emirate</option>
+      <option>Local within same Emirate</option>
+    </select>
+  </div>
+
+  <div class="field">
+    <label>Emirate</label>
+    <select formControlName="emirate">
+      <option value="">Select an option</option>
+      <option>Abu Dhabi</option>
+      <option>Dubai</option>
+    </select>
+  </div>
+
+  <div class="field">
+    <label>Type of disbursement</label>
+    <select formControlName="type">
+      <option value="">Select an option</option>
+      <option value="Financial">Financial</option>
+      <option value="Material">Material</option>
+    </select>
+  </div>
+
+  <div class="field">
+    <label>Amount Transferred</label>
+    <input type="number" placeholder="Enter amount in AED" formControlName="amount" />
+  </div>
+
+  <div class="field">
+    <label>Provide source of items disbursed</label>
+    <select formControlName="source">
+      <option value="">Select an option</option>
+      <option>Source 1</option>
+    </select>
+  </div>
+
+  <div class="field">
+    <label>Receiver Role</label>
+    <select formControlName="receiverRole">
+      <option value="">Select an option</option>
+      <option>Role 1</option>
+    </select>
+  </div>
+
+  <div class="field">
+    <label>Receiver Type</label>
+    <select formControlName="receiverType">
+      <option value="">Select an option</option>
+      <option>Type 1</option>
+    </select>
+  </div>
+
+  <div class="field">
+    <label>Receiver Name</label>
+    <input placeholder="Enter" formControlName="receiverName" />
+  </div>
+
+  <div class="field">
+    <label>Receiver Contact Number</label>
+    <input placeholder="Enter" formControlName="receiverContact" />
+  </div>
+
+  <div class="field">
+    <label>Receiver Email <span class="hint">(Optional)</span></label>
+    <input placeholder="Enter" formControlName="receiverEmail" />
+  </div>
+</form>
+
+<!-- CTA Buttons -->
+<div class="cta-container">
+  <button type="button" class="btn-primary" (click)="saveAndAddNew()">Save & Add New</button>
+  <button type="button" class="btn-primary" (click)="proceed()">Proceed to Review</button>
+</div>
