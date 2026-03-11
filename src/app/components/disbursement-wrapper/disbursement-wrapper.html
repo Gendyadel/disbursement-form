@@ -19,9 +19,14 @@
   <!-- Main Content -->
   <main class="main">
     @if (tab() === tabsEnum.Form) {
-      <app-disbursement-form (goToReview)="toggleTab(tabsEnum.Review)"></app-disbursement-form>
+      <app-disbursement-form
+        [item]="item()"
+        (goToReview)="toggleTab(tabsEnum.Review)"
+      ></app-disbursement-form>
     } @else {
-      <app-disbursement-review></app-disbursement-review>
+      <app-disbursement-review
+        (editChange)="toggleTab(tabsEnum.Form, $event)"
+      ></app-disbursement-review>
     }
   </main>
 </div>

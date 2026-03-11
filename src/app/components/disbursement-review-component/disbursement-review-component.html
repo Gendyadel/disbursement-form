@@ -7,6 +7,7 @@
       <th>Date</th>
       <th>Amount</th>
       <th>Receiver</th>
+      <th>Actions</th>
     </tr>
   </thead>
 
@@ -17,6 +18,10 @@
         <td>{{ i.disbursementDate }}</td>
         <td>{{ i.amount }}</td>
         <td>{{ i.receiverName }}</td>
+        <td>
+          <button class="btn-secondary mx-1" (click)="edit(i)">Edit</button>
+          <button class="btn-danger" (click)="remove(i)">Remove</button>
+        </td>
       </tr>
     }
   </tbody>
