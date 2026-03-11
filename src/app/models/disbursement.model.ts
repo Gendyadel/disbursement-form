@@ -1,4 +1,5 @@
 export interface Disbursement {
+    id: string; // Unique identifier for each disbursement
     programName: string;
     disbursementDate: string;
     geographicScope: string;
