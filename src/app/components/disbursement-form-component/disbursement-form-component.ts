@@ -23,7 +23,6 @@ export class DisbursementFormComponent {
 
   private _initForm() {
     this.form = this.fb.group({
-      forSelf: [true],
       programName: ['', Validators.required],
       disbursementDate: ['', Validators.required],
       geographicScope: ['', Validators.required],
@@ -43,7 +42,7 @@ export class DisbursementFormComponent {
     if (this.form.invalid) return;
 
     this.service.addDisbursement(this.form.value);
-    this.form.reset({ forSelf: true }); // keep default
+    this.form.reset();
   }
 
   proceed() {
